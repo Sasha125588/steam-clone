@@ -36,7 +36,7 @@ const RootLayout = ({ children }: RootLayoutProps) => {
 				<SidebarProvider>
 					<AppSidebar />
 					<SidebarInset className='bg-[#111317]'>
-						<main>
+						<main className='px-6 py-2'>
 							<SidebarTrigger />
 							{children}
 						</main>

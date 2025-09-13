@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { SidebarMenu, SidebarMenuItem } from '@/components/ui'
+import { SidebarGroup, SidebarMenu, SidebarMenuItem } from '@/components/ui'
 import { SidebarMenuButton } from '@/components/ui'
 
 import type { SidebarNavigation } from '../../constants/data'
@@ -13,11 +13,11 @@ interface NavMainProps {
 
 export const NavMain = ({ items }: NavMainProps) => {
 	return (
-		<SidebarMenu>
+		<SidebarMenu className='space-y-1'>
 			{items.map(item => (
 				<SidebarMenuItem key={item.title}>
 					<SidebarMenuButton
-						size='lg'
+						size='md'
 						asChild
 					>
 						<Link

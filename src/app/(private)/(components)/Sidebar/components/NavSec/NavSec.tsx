@@ -16,9 +16,9 @@ interface NavSecProps {
 
 export const NavSec = ({ items }: NavSecProps) => {
 	return (
-		<SidebarGroup className='-ml-2'>
+		<SidebarGroup className='overflow-hidden'>
 			<SidebarGroupLabel className='text-[13px]'>BROWSE BY GENRE</SidebarGroupLabel>
-			<SidebarMenu className='mt-2 grid w-60 grid-cols-2'>
+			<SidebarMenu className='mt-2 -ml-4 grid w-60 grid-cols-2 gap-x-0'>
 				{items.map(item => (
 					<SidebarMenuItem key={item.title}>
 						<SidebarMenuButton
