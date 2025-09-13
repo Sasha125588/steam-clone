@@ -1,13 +1,6 @@
 import { ArrowRightIcon, DownloadCloudIcon, PlusIcon, UsersIcon } from 'lucide-react'
 
-import {
-	Sidebar,
-	SidebarContent,
-	SidebarFooter,
-	SidebarGroup,
-	SidebarHeader,
-	SidebarRail
-} from '@/components/ui/sidebar'
+import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarRail } from '@/components/ui'
 
 import { SteamLogo } from '../../../../../public/images/SteamLogo'
 

@@ -6,7 +6,7 @@ import {
 	SidebarMenu,
 	SidebarMenuButton,
 	SidebarMenuItem
-} from '@/components/ui/sidebar'
+} from '@/components/ui'
 
 import type { SidebarNavigation } from '../../constants/data'
 
@@ -16,18 +16,21 @@ interface NavSecProps {
 
 export const NavSec = ({ items }: NavSecProps) => {
 	return (
-		<SidebarGroup>
+		<SidebarGroup className='-ml-2'>
 			<SidebarGroupLabel className='text-[13px]'>BROWSE BY GENRE</SidebarGroupLabel>
-			<SidebarMenu className='mt-2 grid grid-cols-2'>
+			<SidebarMenu className='mt-2 grid w-60 grid-cols-2'>
 				{items.map(item => (
 					<SidebarMenuItem key={item.title}>
 						<SidebarMenuButton
 							variant='ghost'
 							asChild
 							size='sm+'
-							className=''
+							className='w-full justify-start'
 						>
-							<Link href={item.url}>{item.title}</Link>
+							<Link href={item.url}>
+								<item.icon />
+								{item.title}
+							</Link>
 						</SidebarMenuButton>
 					</SidebarMenuItem>
 				))}

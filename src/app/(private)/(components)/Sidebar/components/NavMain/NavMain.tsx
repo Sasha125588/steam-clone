@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
-import { SidebarMenu, SidebarMenuItem } from '@/components/ui/sidebar'
-import { SidebarMenuButton } from '@/components/ui/sidebar'
+import { SidebarMenu, SidebarMenuItem } from '@/components/ui'
+import { SidebarMenuButton } from '@/components/ui'
 
 import type { SidebarNavigation } from '../../constants/data'
 
