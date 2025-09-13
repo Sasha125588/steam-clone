@@ -1,44 +1,50 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "../globals.css";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import { AppSidebar } from "./(components)/Sidebar/Sidebar";
+import type { Metadata } from 'next'
+import { Geist, Geist_Mono } from 'next/font/google'
+
+import { SidebarInset, SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar'
+
+import '../globals.css'
+
+import { AppSidebar } from './(components)/Sidebar/Sidebar'
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+	variable: '--font-geist-sans',
+	subsets: ['latin']
+})
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+	variable: '--font-geist-mono',
+	subsets: ['latin']
+})
 
 export const metadata: Metadata = {
-  title: "Steam Clone",
-  description: "Steam Clone",
-};
+	title: 'Steam Clone',
+	description: 'Steam Clone'
+}
 
 interface RootLayoutProps {
-  children: React.ReactNode;
+	children: React.ReactNode
 }
 
 const RootLayout = ({ children }: RootLayoutProps) => {
-  return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <SidebarProvider>
-          <AppSidebar />
-          <main>
-            <SidebarTrigger />
-            {children}
-          </main>
-        </SidebarProvider>
-      </body>
-    </html>
-  );
-};
+	return (
+		<html lang='en'>
+			<body
+				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+				suppressHydrationWarning
+			>
+				<SidebarProvider>
+					<AppSidebar />
+					<SidebarInset className='bg-[#111317]'>
+						<main>
+							<SidebarTrigger />
+							{children}
+						</main>
+					</SidebarInset>
+				</SidebarProvider>
+			</body>
+		</html>
+	)
+}
 
-export default RootLayout;
+export default RootLayout
