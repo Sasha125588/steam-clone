@@ -17,20 +17,16 @@ interface NavSecProps {
 export const NavSec = ({ items }: NavSecProps) => {
 	return (
 		<SidebarGroup className='overflow-hidden'>
-			<SidebarGroupLabel className='text-[13px]'>BROWSE BY GENRE</SidebarGroupLabel>
-			<SidebarMenu className='mt-2 -ml-4 grid w-60 grid-cols-2 gap-x-0'>
+			<SidebarGroupLabel className='text-[11px]'>BROWSE BY GENRE</SidebarGroupLabel>
+			<SidebarMenu className='mt-1 grid w-max grid-cols-2 gap-x-4'>
 				{items.map(item => (
 					<SidebarMenuItem key={item.title}>
 						<SidebarMenuButton
 							variant='ghost'
 							asChild
 							size='sm+'
-							className='w-full justify-start'
 						>
-							<Link href={item.url}>
-								<item.icon />
-								{item.title}
-							</Link>
+							<Link href={item.url}>{item.title}</Link>
 						</SidebarMenuButton>
 					</SidebarMenuItem>
 				))}
